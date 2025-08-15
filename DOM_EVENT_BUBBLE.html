@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM EVENT BUBBLE</title>
+</head>
+<body>
+    <div id="container">
+        <h1>My List Item</h1>
+        <ul id="myList">
+            <li id="first" class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Incidunt, obcaecati aperiam.</li>
+            <li class="item">Illum, voluptas unde?</li>
+            <li class="item">Odit, necessitatibus magni.</li>
+            <li class="item">Amet, in tempora.</li>
+        </ul>
+        <button id="addNew">ADD</button>
+        <button id="delNew">DELETE</button>
+    </div>
+
+    <script>
+
+        // var items = document.getElementsByClassName('item');
+        // for (let i = 0; i < items.length; i++) {
+        //     const item = items[i];
+        //     item.addEventListener('click', function(event) {
+        //         //console.log(this); --> own See
+        //         //console.log(this, event.target);
+        //         //console.log(this, event.target.innerText);
+        //         //console.log(this, event.target.parentNode);
+        //         event.target.parentNode.removeChild(event.target);
+        //     })     
+        // }
+
+
+        // Adding Element --->
+        document.getElementById('addNew').addEventListener('click', function(event) {
+            var itemParent = document.getElementById('myList');
+            var newItem = document.createElement('li');
+            newItem.innerText = 'New Item';
+            itemParent.appendChild(newItem);
+        })
+        // Adding Element --->
+
+        // Deleting Element --->
+        document.getElementById('delNew').addEventListener('click', function(event){
+            var myList = document.getElementById('myList');
+            if (myList.children.length > 0) {
+            myList.removeChild(myList.children[0]);
+        }
+        })
+        // Deleting Element --->
+        
+        /// here we can see previous child is removed but when we new item is added , this item is can't removed !! so this problem is overcome using Bubble Event!
+
+        // document.getElementById('myList').addEventListener('click', function(event) {
+        //     // console.log(this, event.target);
+        //     event.target.parentNode.removeChild(event.target);
+        // });
+
+
+        document.getElementById('first').addEventListener('click', function(event) {
+            console.log('First Item Li is Checked!');
+        });
+
+        document.getElementById('myList').addEventListener('click', function(event) {
+            console.log('Ul Item is Checked!');
+        });
+
+        document.getElementById('container').addEventListener('click', function(event) {
+            console.log('Container is Checked!');
+        });
+
+        // Stop Propagating Event Bubble
+        // document.getElementById('first').addEventListener('click', function(event) {
+        //     console.log('First Item is Checked!');
+        //     event.stopPropagation(); ==> Stop bubble event 
+        //     event.stopImmediatePropagation(); ===> All Element are stop!
+
+        // });
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

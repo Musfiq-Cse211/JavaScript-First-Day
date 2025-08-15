@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM EVENT EXAMPLE </title>
+    <style>
+        .container-one {
+            background-color: rgb(0, 247, 255);
+            color: black;
+            text-align: center;
+            font-weight: bold;
+            width: 150px;
+            height: 20px;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    Enter Your Name : <input type="text" id="fName" onchange="upperCase()">
+    <div class="container-one" onmouseover="mOver(this)" onmouseout="mOut(this)">Mouse Over ME</div>
+</body>
+    <script>
+        function mOver(one) {
+            one.innerHTML = 'Thank You!';
+        }
+
+        function mOut(one) {
+            one.innerHTML = 'Mouse Over ME';
+        }
+
+        function upperCase() {
+            const formName = document.getElementById('fName');
+            formName.value = formName.value.toUpperCase();
+        }
+    </script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Pick</title>
+    <style>
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box {
+            width: 300px;
+            height: 300px;
+        }
+        h1, span {
+            font-family: monospace;
+            font-size: 2em;
+            display: inline-block;
+        }
+        #selectedColor {
+            color: white;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>DOM EVENTS</h1>
+    <button onclick="alert('Hi! This is Musfiq')">onclick</button>
+    <button onmouseover="alert('Hi! This is Musfiq')">onmouseover</button>
+    <button>CLICK</button> -->
+
+    <!-- Colors ==================> -->
+    <section id="container"></section>
+
+    <h1>Please Click on a Color.</h1> <span id="selectedColor"></span>
+
+    <script>
+        // colors palate ===========>
+        const colors = ['red', 'yellow', 'green', 'blue', 'orange', 'purple', 'violet', 'indigo'];
+        const container = document.querySelector('section');
+        const h1 = document.querySelector('h1');
+        const selectedColor = document.querySelector('#selectedColor');
+
+        for (let color of colors) {
+            const box = document.createElement('div');
+            box.classList.add('box');
+            container.appendChild(box);
+            box.style.backgroundColor = color;
+
+            box.addEventListener('mouseover', function() {
+                h1.innerText = 'You Have Selected: ';
+                selectedColor.innerHTML = box.style.backgroundColor;
+                selectedColor.style.backgroundColor = box.style.backgroundColor;
+            })
+        }
+
+
+
+
+        // const btn = document.querySelector('button');
+
+        // // btn.ondblclick = function() {
+        // //     alert('Assalamualaikum!');
+        // // };
+        // // btn.ondblclick = function() {
+        // //     console.log('Walaikum Assalam!');
+        // // };
+        // // here only one is shown in output! so overcome this problem using addEventListener('click', function() {})
+
+        // btn.addEventListener('dblclick', function() {
+        //     alert('Greetings!');
+        //     console.log('Congratulation! You got 100% Scholarship!');
+        // })
+    </script>
+</body>
+</html>

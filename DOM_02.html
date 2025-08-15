@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-02</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="ul-title">Unordered List</h2>
+
+    <ul id="list" class="ul-list">
+        <li class="single-item">item-one</li>
+        <li class="single-item">item-two</li>
+        <li class="single-item">item-three</li>
+        <li class="single-item">item-four</li>
+    </ul>
+
+    <h2>Paragraphs</h2>
+
+    <p class="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis possimus delectus ipsum eum voluptatibus ab nobis esse, cum aperiam doloribus impedit corporis blanditiis laborum modi quasi provident ducimus similique eaque!</p>
+    <p class="paragraph"> <span style="display: none;">Lorem ipsum</span>dolor sit amet, consectetur adipisicing elit. Eaque unde omnis nobis vel beatae magni dolor ea ex minima dolores quasi, illum, voluptatem assumenda eum minus. Excepturi, reprehenderit. Ad, corrupti?</p>
+    <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque unde omnis nobis vel beatae magni dolor ea ex minima dolores quasi, illum, voluptatem assumenda eum minus. Excepturi, reprehenderit. Ad, corrupti?</p>
+
+    <h2>Form</h2>
+    <form action="">
+        First Name: <input type="text"> <br><br>
+        Second Name: <input type="text"> <br><br>
+        Password: <input type="password"> <br><br>
+        Range: <input type="range" min="20" max="100"> <br><br>
+        Check-Box: <input type="checkbox"> <br><br>
+        Color: <input type="color" name="id">
+    </form>
+
+    <script>
+        // const paras = document.querySelector('p');
+        // paras[1].textContent;
+        // paras[1].innerText;
+        // paras[1].innerHTML;
+
+        // const ul = document.querySelector('ul');
+        // ul.textContent;
+        // ul.innerText;
+        // ul.innerText;
+        // ul.innerHTML = '<li><b>My New Item</b></li>';
+        // ul.innerHTML = '<li>My New <span style="color:red">ITEM</span></li>'
+
+        // const forms = document.querySelector('input');
+        // forms[0].value;
+        // forms[2].value;
+        // forms[3].value;
+        // forms[3].checked;
+
+    </script>
+
+    <!-- 
+1. InnerText: The DOM innerText Property is used to set or returns the text content of a specified node and its descendants. This property is very similar to text content property but returns the content of all elements, except for script and style elements. 
+
+2. textContent: The textContent property sets or returns the text content of the specified node, and all its descendants. ... textContent returns the text content of all elements, while innerText returns the content of all elements, except for script and style elements.
+
+3. innerHTML: innerHTML is an Element property in JS that is used to get or set the HTML or XML markup contained within the element. innerHTML property can also be used to examine current HTML source of the page including any changes that have been made since the page was first loaded by the browser.
+
+4. style: The HTMLElement.style property is used to get as well as set the inline style of an element.
+
+5. Value: value is a property of form field elements. Paragraphs (and other elements) have textContent and innerHTML . It is closely coupled with a corresponding value attribute on the field - in other words, if one is updated, so is the other
+     -->
+</body>
+</html>

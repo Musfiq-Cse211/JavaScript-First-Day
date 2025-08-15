@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello</h1>
+    <!-- article*3>h3{article-$}+p.author{author-$}+p.description>lorem30 -->
+
+    <article id="first-article">
+        <h3>article-1</h3>
+        <p class="author">author-1</p>
+        <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam obcaecati aperiam
+            error iste mollitia eveniet libero quisquam beatae deleniti, quae ipsa dignissimos porro earum. Laudantium
+            explicabo nobis veniam consequuntur mollitia.</p>
+    </article>
+    <article id="second-article">
+        <h3>article-2</h3>
+        <p class="author">author-2</p>
+        <p class="description">Rem unde optio sed voluptatem tempore fuga minima sint? Atque, nesciunt inventore!
+            Sapiente optio accusamus, ducimus officiis reiciendis laborum eveniet consequuntur. Mollitia est accusamus
+            tenetur quaerat? Impedit recusandae iure non.</p>
+    </article>
+    <article class="third-article">
+        <h3>article-3</h3>
+        <p class="author">author-3</p>
+        <p class="description">Placeat dolores cumque vero molestiae eius, mollitia tempora tempore, eligendi nulla
+            saepe enim vitae similique iusto aspernatur iste reiciendis non, inventore alias libero? Iure, adipisci quae
+            inventore qui fugiat consequuntur.</p>
+    </article>
+    <article class="fourth-article">
+        <ul id="all-list">
+            <li>list-1</li>
+            <li>list-2</li>
+            <li>list-3</li>
+            <li>list-4</li>
+        </ul>
+    </article>
+</body>
+
+<script>
+    var authors = document.querySelectorAll('.author');
+    for (let i = 0; i < authors.length; i++) {
+        const element = authors[i];
+        element.style.backgroundColor = 'yellow';
+        element.style.margin = '10px';
+    }
+
+    const article = document.getElementById('first-article');
+    const newPara = document.createElement('p');
+    newPara.innerText = 'This is New Paragraph!';
+    article.append(newPara);
+
+    const ul = document.getElementById('all-list');
+    const li = document.createElement('li');
+    li.innerText = 'New List Five';
+    ul.appendChild(li);
+
+
+
+    
+</script>
+
+</html>
+
+

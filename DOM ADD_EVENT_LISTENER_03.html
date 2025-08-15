@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM EVENT listener 03</title>
+    <style>
+        button {
+            background: none;
+            border: 1px solid gray;
+            color: rgb(94, 93, 93);
+            font-weight: bold;
+            padding: 10px;
+            margin: 20px;
+        }
+        .container {
+            width: 250px;
+            height: 80px;
+            background-color: rgb(113, 238, 207);
+        }
+        .container-two {
+            margin-top: 50px;
+            background-color: #ecafaf;
+        }
+        form input {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="simple-btn">CLICK ME</button>
+    </div>
+
+    <div class="container-two">
+        <form action="">
+            Enter Name : <input type="text" id="fName"> <br>
+            Password : <input type="password" id="pass"> <br>
+            <input type="submit">
+        </form>
+        <p id="demo">The Input is Empty!</p>
+    </div>
+     
+
+    <script>
+        // document.getElementById('simple-btn').addEventListener('click', message);
+        document.querySelector('.container').addEventListener('mousemove', message);
+        // document.querySelector('.container').style.background = 'cyan';
+
+        function message(e) {
+            let val = e;
+            val = e.target;
+            val = e.target.id;
+
+            val = e.timestamp;
+            val = e.type;
+
+            val = e.clientY;
+            val = e.clientX;
+
+            val = e.offsetY;
+            val = e.offsetX;
+            val = this;
+            this.style.background = `#${e.offsetX}`;
+
+            // console.log(val);
+            console.log(e.offsetX);
+            console.log(e.offsetY);
+            console.log(val);
+        }
+
+            // form --> 
+            document.querySelector('#fName').addEventListener('focus', newHandling);
+
+            document.querySelector('#pass').addEventListener('keyup', newHandlingTwo);
+
+            function newHandling(event) {
+                this.style.background = 'rgb(113, 238, 207)';
+            }
+
+            function newHandlingTwo(event) {
+                document.getElementById('demo').innerText = this.value;
+            }
+
+
+    </script>
+</body>
+</html>

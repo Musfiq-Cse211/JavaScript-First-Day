@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-01</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <p id="intro">Finding HTML Elements by Id</p>
+    <p id="demo"></p>
+    <h1>Muhammad Musfiq</h1>
+    <a href="">Click Me!</a>
+
+    <h2 id="ul-title">Unordered List</h2>
+    <ul id="list" class="ul-list">
+        <li class="single-item">item-one</li>
+        <li class="single-item">item-two</li>
+        <li class="single-item">item-three</li>
+        <li class="single-item">item-four</li>
+    </ul>
+
+    <p>Paragraphs</p>
+    <p class="paragraph">First-Paragraph</p>
+    <p class="paragraph">Second-Paragraph</p>
+    <p class="paragraph">Third-Paragraph</p>
+
+    <h2 id="myElement">HOVER ME</h2>
+    <script>
+
+        // document.getElementById('demo').innerHTML = 'AssalamuAlaikum!';
+        // document.querySelector('h1').style.color = 'red';
+
+        // const element = document.getElementById("intro");
+        // document.getElementById("demo").innerHTML = "The text from the intro paragraph is: " + element.innerHTML;
+
+
+        // const ulHeading = document.getElementById('ul-title');
+        // ulHeading.textContent = 'Great!';
+        // ulHeading.style.color = 'red';
+        // console.log(ulHeading);
+
+        // const para = document.querySelector('.paragraph');
+        // para.textContent = 'This is P Tag!';
+        // para.style.color = 'green';
+        // // para.style.font.weight = 'bold';
+        // console.log(para);
+
+        // const paraTwo = document.getElementsByTagName('p');
+        // for (let i = 0; i < paraTwo.length; i++) {
+        //     paraTwo[i].style.color = 'red';
+        // }
+
+        // const listItem = document.getElementsByClassName('single-item');
+        // listItem[0].textContent = 'Hello this is exchange text of item-one';
+        // listItem[0].style.color = 'red';
+        // listItem[1].style.color = 'green';
+        // listItem[2].style.color = 'blue';
+
+
+        const paraThree = document.querySelectorAll('p');
+        paraThree.forEach( p => {
+            p.style.color = 'black';
+            p.style.background = 'yellow';
+            p.style.padding = '5px';
+            p.style.border = '3px solid black';
+        })
+        const paraFour = document.querySelectorAll('li');
+        paraFour.forEach( li => {
+            li.style.color = 'white';
+            li.style.fontWeight = 'bold';
+            li.style.width = '200px';
+            li.style.background = 'blue';
+            li.style.padding = '5px';
+            li.style.listStyleType = 'none';
+        })
+
+
+        // Assuming you have an HTML element with the id "myElement"
+        const element = document.getElementById("myElement");
+
+        // Add a mouseover event listener to change the background color to red
+        element.addEventListener("mouseover", function() {
+            element.style.backgroundColor = "red";
+        });
+
+        // Add a mouseout event listener to change the background color back to its original state
+        element.addEventListener("mouseout", function() {
+            element.style.backgroundColor = ""; 
+        // This will remove the inline style and revert to the CSS stylesheet
+        });
+
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
+
+<!--  
+    # Single Element Selector 
+    1. getElementById()
+    2. querySelector()
+
+    # Multiple Element Selector 
+    1. getElementByTagName() ===> Provide HTML COLLECTION 
+    2. geltElementByClassName()
+    3. querySelectorAll()
+
+    # Get Child Nodes Properties ==> childNodes
+    # Get Children Element Nodes ==> children
+
+ -->
+
+<!-- Finding HTML Elements
+document.getElementById(id)	==> Find an element by element id
+document.getElementsByTagName(name)	==> Find elements by tag name
+document.getElementsByClassName(name) ==> Find elements by class name 
+-->
+
+<!-- Changing HTML Elements
+element.innerHTML =  new html content ==> Change the inner HTML of an element
+element.attribute = new value ==> Change the attribute value of an HTML element
+element.style.property = new style ==> Change the style of an HTML element
+element.setAttribute(attribute, value) ==> Change the attribute value of an HTML element
+ -->
+
+<!-- Adding and Deleting Elements
+document.createElement(element)	==> Create an HTML element
+document.removeChild(element) ==> Remove an HTML element
+document.appendChild(element) ==> Add an HTML element
+document.replaceChild(new, old) ==> Replace an HTML element
+document.write(text) ==> Write into the HTML output stream
+  -->

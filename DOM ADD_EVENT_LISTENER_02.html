@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Add Events listener</title>
+</head>
+<body>
+     <!-- First Way -->
+     <h1 onclick="handleClick()">My Name is:</h1>
+     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, laudantium..
+     </p>
+     <button ondblclick="clickMe()">Click ME!</button>
+     <button id="first-btn">Button-1</button>
+     <button id="second-btn">Button-2</button>
+     <button id="third-btn">Button-3</button>
+ 
+     <script>
+     function handleClick() {
+         h1.style.backgroundColor = 'yellow';
+         h1.style.fontSize = '30px';
+         h1.style.fontWeight = 'bold';
+         h1.innerText = 'Muhammad Musfiq';
+     }
+     function clickMe() {
+         document.write(new Date());
+     }
+ 
+     // Second Way ===>
+     const firstBtn = document.getElementById('first-btn');
+     firstBtn.ondblclick = function() {
+         firstBtn.style.backgroundColor = 'yellow';
+     }
+ 
+      // Third Way ===>
+     function newClickTwo() {
+         document.body.style.backgroundColor = 'Cyan';
+     }
+     const secondBtn = document.getElementById('second-btn');
+     secondBtn.ondblclick = newClickTwo;
+ 
+     // Modern Way ===>
+     // const thirdBtn = document.getElementById('third-btn');
+     // thirdBtn.addEventListener('click', newClickable);
+     // function newClickable() {
+     //     document.body.style.backgroundColor = 'tomato';
+     // }
+     const thirdBtn = document.getElementById('third-btn').addEventListener('click', function(){
+         document.body.style.backgroundColor = 'tomato';
+         document.body.style.color = 'yellow';
+     });
+     
+     </script>
+</body>
+</html>
