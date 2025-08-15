@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inches to Feet Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #container {
+            margin: 50px auto;
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #0051ff;
+            background-color: rgb(179, 255, 255);
+            border-radius: 5px;
+        }
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Inches to Feet Converter</h1>
+        <label for="inches">Enter inches:</label>
+        <input type="number" id="inches" placeholder="Enter inches">
+        <button onclick="convert()">Convert</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convert() {
+
+            const inchesInput = document.getElementById('inches');
+            const inches = parseFloat(inchesInput.value);
+   
+            if (isNaN(inches)) {
+                alert('Please enter a valid number for inches.');
+                return;
+            }
+
+            const feet = inches / 12;
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = `${inches} inches is equal to ${feet} feet.`;
+        }
+    </script>
+</body>
+</html>

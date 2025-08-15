@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decimal to Binary Converter</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('/Modern CSS3/five_two.jpg'); /* Replace 'your-background-image.jpg' with your actual image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: rgba(219, 21, 99, 0.8);
+            background: -webkit-linear-gradient(
+            45deg,
+            rgba(213, 0, 125, 0.8),
+            rgba(229, 57, 53, 0.8)
+            );
+            background: -o-linear-gradient(
+            45deg,
+            rgba(213, 0, 125, 0.8),
+            rgba(229, 57, 53, 0.8)
+            );
+            background: -moz-linear-gradient(
+            45deg,
+            rgba(213, 0, 125, 0.8),
+            rgba(229, 57, 53, 0.8)
+            );
+            background: linear-gradient(
+            45deg,
+            rgba(213, 0, 125, 0.8),
+            rgba(229, 57, 53, 0.8)
+            );
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-box {
+            width: 40%;
+            background: white; /* Semi-transparent white background for the form */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+        }
+
+        .input2 {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .wrap-input2 {
+            position: relative;
+        }
+
+        .wrap-input2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #d5007d;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s;
+        }
+
+        .wrap-input2:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        #result {
+            font-size: 20px;
+            margin-top: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .convert-button {
+            background: -webkit-linear-gradient(
+                -135deg,
+                #d5007d,
+                #e53935,
+                #d5007d,
+                #e53935
+            );
+            background: -o-linear-gradient(-135deg, #d5007d, #e53935, #d5007d, #e53935);
+             background: -moz-linear-gradient(-135deg, #d5007d, #e53935, #d5007d, #e53935);
+            background: linear-gradient(-135deg, #d5007d, #e53935, #d5007d, #e53935);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            
+        }
+        .wrap-input2 {
+        width: 90%;
+        position: relative;
+        border-bottom: 2px solid #adadad;
+        margin-bottom: 37px;
+  }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <div class="form-title">Decimal to Binary Converter</div>
+            <input class="input2" type="number" id="number" placeholder="Enter a number" />
+            <div class="wrap-input2 validate-input" type="text" data-validate="Message is required">
+                <h1 id="result"></h1>
+            </div>
+            <button class="convert-button" onclick="convertToBinary()">Convert</button>
+        </div>
+    </div>
+
+    <script>
+        function convertToBinary() {
+            const decimalInput = document.getElementById("number");
+            const binaryResult = document.getElementById("result");
+
+            const decimalValue = decimalInput.value;
+            const binaryValue = (decimalValue >>> 0).toString(2);
+
+            binaryResult.textContent = binaryValue;
+        }
+    </script>
+</body>
+</html>

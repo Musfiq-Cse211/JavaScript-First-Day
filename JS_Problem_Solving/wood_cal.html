@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wood CFT Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin: 50px auto;
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ff0404;
+            background-color: blanchedalmond;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Wood CFT Calculator</h1>
+    <form id="woodCalculator">
+        <label for="length">Length (inches):</label>
+        <input type="number" id="length" step="0.01" required><br><br>
+
+        <label for="base">Base (inches):</label>
+        <input type="number" id="base" step="0.01" required><br><br>
+
+        <label for="height">Height (inches):</label>
+        <input type="number" id="height" step="0.01" required><br><br>
+
+        <input type="button" value="Calculate CFT" onclick="calculateCFT()">
+    </form>
+
+    <div id="result"></div>
+</div>
+    <script>
+        function calculateCFT() {
+            const lengthInches = parseFloat(document.getElementById("length").value);
+            const baseInches = parseFloat(document.getElementById("base").value);
+            const heightInches = parseFloat(document.getElementById("height").value);
+
+            const lengthFeet = lengthInches / 12;
+            const baseFeet = baseInches / 12;
+            const heightFeet = heightInches / 12;
+
+            const cft = lengthFeet * baseFeet * heightFeet;
+            // Formula 02 -> lengthFeet(ft) * baseFeet(inch) * heightFeet(inch) / 144 ;
+            // Formula 03 : 1.5*30*60 inch^3 / 1728 [All are converted in Inchi]
+
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `<p><strong>Cubic Feet (CFT): ${cft.toFixed(2)} CFT/KB WOOD</strong></p>`;
+        }
+    </script>
+</body>
+</html>
